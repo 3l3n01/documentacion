@@ -1,0 +1,706 @@
+{
+  "openapi": "3.0.0",
+  "x-stoplight": {
+    "id": "10930e6eb761b"
+  },
+  "info": {
+    "title": "Legados",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://10.250.150.245:8082"
+    },
+    {
+      "url": "http://10.250.150.245:8083"
+    }
+  ],
+  "components": {
+    "securitySchemes": {},
+    "schemas": {
+      "sendSms": {
+        "type": "object",
+        "x-examples": {
+          "Example 1": {
+            "mailTo": [],
+            "mailCc": [],
+            "mailBcc": "",
+            "mailSubject": "",
+            "mailContent": "",
+            "attachments": {
+              "name": "",
+              "data": [],
+              "contentType": ""
+            },
+            "model": {
+              "title": "",
+              "cte": "",
+              "nombre": "",
+              "cel": "",
+              "deviceId": "",
+              "latitud": "",
+              "longitud": "",
+              "date": "02-01-2006 15:04:05",
+              "footer": ""
+            },
+            "plantilla": ""
+          }
+        },
+        "properties": {
+          "mailTo": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "email"
+            }
+          },
+          "mailCc": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "email"
+            }
+          },
+          "mailBcc": {
+            "type": "string"
+          },
+          "mailSubject": {
+            "type": "string"
+          },
+          "mailContent": {
+            "type": "string"
+          },
+          "attachments": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              },
+              "contentType": {
+                "type": "string"
+              }
+            }
+          },
+          "model": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "cte": {
+                "type": "string"
+              },
+              "nombre": {
+                "type": "string"
+              },
+              "cel": {
+                "type": "string"
+              },
+              "deviceId": {
+                "type": "string"
+              },
+              "latitud": {
+                "type": "string"
+              },
+              "longitud": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "footer": {
+                "type": "string"
+              }
+            }
+          },
+          "plantilla": {
+            "type": "string"
+          }
+        }
+      },
+      "saveTokenRequest": {
+        "type": "object",
+        "properties": {
+          "idFirebase": {
+            "type": "string"
+          },
+          "numCliente": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "idFirebase": "",
+            "numCliente": ""
+          }
+        }
+      },
+      "sendPushRequest": {
+        "type": "object",
+        "properties": {
+          "idFirebase": {
+            "type": "string"
+          },
+          "numCliente": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "idFirebase": "",
+            "numCliente": ""
+          }
+        }
+      },
+      "numClienteRequest": {
+        "type": "object",
+        "properties": {
+          "numCliente": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "numCliente": ""
+          }
+        }
+      },
+      "GenericServiceResponse": {
+        "title": "GenericServiceResponse",
+        "x-stoplight": {
+          "id": "yn6xi2bgpioib"
+        },
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "createdRequest": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "CustomerDataResponse": {
+        "title": "CustomerDataResponse",
+        "x-stoplight": {
+          "id": "5znlwd3ir1r9h"
+        },
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "createdRequest": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "numCliente": {
+            "type": "string"
+          },
+          "nombreCliente": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "personType": {
+            "type": "string"
+          },
+          "rfc": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "birthDate": {
+            "type": "string"
+          }
+        }
+      },
+      "ClientNameResponse": {
+        "title": "ClientNameResponse",
+        "x-stoplight": {
+          "id": "4z3b14rqpq85g"
+        },
+        "type": "object",
+        "properties": {
+          "nombreCompleto": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "apellido_Paterno": {
+            "type": "string"
+          },
+          "apellido_Materno": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "createdRequest": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "AccountsClientResponse": {
+        "title": "AccountsClientResponse",
+        "x-stoplight": {
+          "id": "5z2hq4f4cxdy2"
+        },
+        "type": "object",
+        "properties": {
+          "numcte": {
+            "type": "string"
+          },
+          "num_cuentas": {
+            "type": "string"
+          },
+          "cuentas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CuentasVo"
+            }
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "createdRequest": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "CuentasVo": {
+        "title": "CuentasVo",
+        "x-stoplight": {
+          "id": "1lwq1edh2pdfo"
+        },
+        "type": "object",
+        "properties": {
+          "accountNumber": {
+            "type": "string"
+          },
+          "accountType": {
+            "type": "string"
+          },
+          "descriptionAccount": {
+            "type": "string"
+          },
+          "productType": {
+            "type": "string"
+          },
+          "descriptionProduct": {
+            "type": "string"
+          },
+          "consultingSystem": {
+            "type": "string"
+          }
+        }
+      },
+      "StatusWsResponse": {
+        "title": "StatusWsResponse",
+        "x-stoplight": {
+          "id": "ptremjs5gfwga"
+        },
+        "type": "object",
+        "properties": {
+          "numcte": {
+            "type": "string"
+          },
+          "estatus": {
+            "type": "string"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "createdRequest": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "SecretKeyResponse": {
+        "title": "SecretKeyResponse",
+        "x-stoplight": {
+          "id": "cyx0qj467m5bu"
+        },
+        "type": "object",
+        "properties": {
+          "secretKey": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "createdRequest": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "TelefonoClienteWsResponse": {
+        "title": "TelefonoClienteWsResponse",
+        "x-stoplight": {
+          "id": "b0ofwqb3rzcp2"
+        },
+        "type": "object",
+        "properties": {
+          "telefono": {
+            "type": "string"
+          },
+          "numCte": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "createdRequest": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "responses": {}
+  },
+  "paths": {
+    "/Notificaciones-Libertad/email/send": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Send Email",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/sendSms"
+              }
+            }
+          }
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenericServiceResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Notificaciones-Libertad/firebase/saveToken": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Save Token",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/saveTokenRequest"
+              }
+            }
+          }
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenericServiceResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Notificaciones-Libertad/firebase/sendPush": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Send Push",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/sendPushRequest"
+              }
+            }
+          }
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenericServiceResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Libertad-Services/client/getCustomerData": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get Customer Data",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/numClienteRequest"
+              }
+            }
+          }
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerDataResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Libertad-Services/client/getInfoClient": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get Custom Data",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/numClienteRequest"
+              }
+            }
+          }
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClientNameResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Libertad-Services/client/getAccountsByClient": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get Accounts By Client",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/numClienteRequest"
+              }
+            }
+          }
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountsClientResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Libertad-Services/client/getStatus": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get Status",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/numClienteRequest"
+              }
+            }
+          }
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusWsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Libertad-Services/client/getSecretKey": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get Secret Key",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/numClienteRequest"
+              }
+            }
+          }
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecretKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Libertad-Services/client/telefonoCliente": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Telefono Cliente",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/numClienteRequest"
+              }
+            }
+          }
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TelefonoClienteWsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Notificaciones-Libertad/sms/send": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Send SMS",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/numClienteRequest"
+              }
+            }
+          }
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenericServiceResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
